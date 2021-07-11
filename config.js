@@ -1,6 +1,6 @@
 const config = {
-    token: 'urtokenhere',
-    prefix: 'urprefixhere'
-}
+  token: "your-bot-token",
+  prefix: "!",
+};
 
 module.exports = config;

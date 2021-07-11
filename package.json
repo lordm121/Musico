@@ -8,9 +8,10 @@
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.2.7",
     "lyrics-finder": "^21.4.0",
-    "opusscript": "^0.0.7",
+    "opusscript": "0.0.8",
     "scrape-yt": "^1.4.3",
-    "ytdl-core": "^3.3.0",
+    "youtubei": "0.0.1-rc.18",
+    "ytdl-core": "^4.8.3",
     "ytdl-core-discord": "^1.2.3"
   },
   "devDependencies": {},

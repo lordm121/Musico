@@ -1,14 +1,19 @@
-exports.run = async(client, message) => {
-    message.channel.send({
-        embed: {
-            title: 'Help',
-            description: `
-           play , nowplaying , lyrics , pause , play , volume , resume , skip , stop ,jumble, ping 
+const { MessageEmbed: Embed } = require("discord.js");
 
-            
-            `,
-            color: '#4d4dff'
-            
-        }
-    })
-}
+exports.run = async (message) => {
+  message.channel.send(
+    new Embed()
+      .setAuthor("Help Command", message.client.user.avatarURL())
+      .setThumbnail(message.guild.iconURL())
+      .addFields(
+        {
+          name: "Music",
+          value: "`play`, `nowplaying`, `lyrics`, `pause`, `volume`, `resume`, `skip`, `stop`",
+        },
+        { name: "Misc", value: "`jumble`, `ping`" }
+      )
+      .setColor("#4d4dff")
+      .setFooter(message.author.username, message.author.avatarURL({ dynamic: true }))
+      .setTimestamp()
+  );
+};
