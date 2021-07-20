@@ -8,12 +8,14 @@ exports.run = async (message) => {
       .addFields(
         {
           name: "Music",
-          value: "`play`, `nowplaying`, `lyrics`, `pause`, `volume`, `resume`, `skip`, `stop`",
+          value: "`play`, `nowplaying`, `lyrics`, `pause`, `volume`, `resume`, `skip`, `stop` ,`jumble`",
         },
-        { name: "Misc", value: "`jumble`, `ping`" }
+        { name: "Other", value: " `ping`" },
+        { name: "Developer", value: "`eval`, `setStatus`" }
+        
       )
       .setColor("#4d4dff")
-      .setFooter(message.author.username, message.author.avatarURL({ dynamic: true }) + "Made By Whirl#0021")
+      .setFooter(message.author.username, message.author.avatarURL({ dynamic: true }) )
       .setTimestamp()
   );
 };

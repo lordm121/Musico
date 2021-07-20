@@ -4,7 +4,7 @@ exports.run = async (message, args) => {
     const queue = message.client.queue.get(message.guild.id)
     if(!queue) return message.channel.send('There are no songs in queue to jumble')
     let songs = queue.songs;
-    //suffle/jumble algorithem is not mine
+    //suffle/jumble algo is not mine
     for (let i = songs.length - 1; i > 1; i--) {
       let j = 1 + Math.floor(Math.random() * i);
       [songs[i], songs[j]] = [songs[j], songs[i]];
