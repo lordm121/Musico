@@ -13,7 +13,7 @@ exports.run = async (message) => {
         { name: "Misc", value: "`jumble`, `ping`" }
       )
       .setColor("#4d4dff")
-      .setFooter(message.author.username, message.author.avatarURL({ dynamic: true }))
+      .setFooter(message.author.username, message.author.avatarURL({ dynamic: true }) + "Made By Whirl#0021")
       .setTimestamp()
   );
 };
