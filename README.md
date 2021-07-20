@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Musico 👋</h1>
+<h1 align="center">Musico 🎵</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.5.0-blue.svg?cacheSeconds=2592000" />
   <a href="dbad-license.org" target="_blank">
