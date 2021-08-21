@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@discordjs/opus": "^0.6.0",
+    "discord-player": "^5.0.2",
+    "discord.js": "^13.1.0",
+    "ffmpeg-static": "^4.4.0",
+    "nodemon": "^2.0.12"
+  },
+  "name": "musico-rewrite-beta",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "beta": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
