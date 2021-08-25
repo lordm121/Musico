@@ -14,7 +14,7 @@
     "beta": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Whirl",
+  "license": "MIT",
   "description": ""
 }
