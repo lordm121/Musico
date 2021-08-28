@@ -18,26 +18,24 @@ const player = new Player(client);
 /*
 Trim function
 */
-const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
-player.on(
-  "trackStart",
-  (queue, track) =>
-    queue.metadata.channel.send({
-      embeds: [
-        new MessageEmbed()
-          .setColor(`RANDOM`)
-          .setTitle(`Now Playing`)
-          .setDescription(`**${track.title}**`)
-          .setThumbnail(track.thumbnail)
-          .addField(`Duration`, `${track.duration}s`, true)
-          .addField(`Requested By`, `${track.requestedBy.username}`, true)
-          .addField(`Views`, track.views.toString(), true)
-          .addField(`URL`, `**[Click Here](${track.url})**`)
-          .addField(`ARTIST`, track.author, true)
-          .setFooter(`© ${client.user.username} | Made By Whirl#0021`),
-      ],
-    }),
-  lcc.send("Evolution")
+const trim = (str, max) =>
+  str.length > max ? `${str.slice(0, max - 3)}...` : str;
+player.on("trackStart", (queue, track) =>
+  queue.metadata.channel.send({
+    embeds: [
+      new MessageEmbed()
+        .setColor(`RANDOM`)
+        .setTitle(`Now Playing`)
+        .setDescription(`**${track.title}**`)
+        .setThumbnail(track.thumbnail)
+        .addField(`Duration`, `${track.duration}s`, true)
+        .addField(`Requested By`, `${track.requestedBy.username}`, true)
+        .addField(`Views`, track.views.toString(), true)
+        .addField(`URL`, `**[Click Here](${track.url})**`)
+        .addField(`ARTIST`, track.author, true)
+        .setFooter(`© ${client.user.username} | Made By Whirl#0021`),
+    ],
+  })
 );
 client.once("ready", () => {
   console.log("I'm ready !");
@@ -477,8 +475,7 @@ client.on("interactionCreate", async (interaction) => {
       queue.seek(seconds);
       return interaction.reply(`:white_check_mark: | - Skipped to ${time} !`);
     }
-  }
-  else if (interaction.commandName == "pause") {
+  } else if (interaction.commandName == "pause") {
     if (!interaction.member.voice.channel)
       return interaction.channel.send(
         `:x: | - You're not in a voice channel !`
@@ -504,8 +501,7 @@ client.on("interactionCreate", async (interaction) => {
       queue.setPaused({ paused: true });
       return interaction.reply(`:white_check_mark: | - Paused !`);
     }
-  }
-  else if (interaction.commandName == "resume") {
+  } else if (interaction.commandName == "resume") {
     if (!interaction.member.voice.channel)
       return interaction.channel.send(
         `:x: | - You're not in a voice channel !`
@@ -531,8 +527,7 @@ client.on("interactionCreate", async (interaction) => {
       queue.setPaused({ paused: false });
       return interaction.reply(`:white_check_mark: | - Resumed the music!`);
     }
-  }
-  else if (interaction.commandName == "skipto") {
+  } else if (interaction.commandName == "skipto") {
     if (!interaction.member.voice.channel)
       return interaction.channel.send(
         `:x: | - You're not in a voice channel !`
@@ -557,10 +552,9 @@ client.on("interactionCreate", async (interaction) => {
     if (queue) {
       let skit = interaction.options.getInteger("position");
       queue.jump(skit).catch(interaction.reply(`:x: | - Invalid position !`));
-      await interaction.reply(`Jumped to track number ${skit} of queue`)
+      await interaction.reply(`Jumped to track number ${skit} of queue`);
     }
-  }
-  else if (interaction.commandName == "lyrics") {
+  } else if (interaction.commandName == "lyrics") {
     if (!interaction.member.voice.channel)
       return interaction.channel.send(
         `:x: | - You're not in a voice channel !`
@@ -591,11 +585,65 @@ client.on("interactionCreate", async (interaction) => {
           .setColor(`RANDOM`)
           .setTitle(`Lyrics for ${song.title}`)
           .setDescription(x)
-          .setFooter(`© Musico 2021 | Made By Whirl#0021`)
+          .setFooter(`© Musico 2021 | Made By Whirl#0021`);
         await interaction.reply({ embeds: [lyricsembed] });
       } else {
         await interaction.reply(`:x: | - No lyrics found for this song !`);
       }
+    }
+  } else if (interaction.commandName == "loop") {
+    if (!interaction.member.voice.channel)
+      return interaction.channel.send(
+        `:x: | - You're not in a voice channel !`
+      );
+
+    if (
+      interaction.guild.me.voice.channel &&
+      interaction.member.voice.channel.id !==
+      interaction.guild.me.voice.channel.id
+    )
+      return interaction.channel.send(
+        `:x: | - You are not in the same voice channel !`
+      );
+
+    const queue = player.getQueue(interaction.guild.id);
+
+    if (!queue)
+      return interaction.reply(
+        `:x: | - There is no music playing  in this guild !`
+      );
+
+    if (queue) {
+      let loop = interaction.options.getString("mode");
+      await queue.setRepeatMode(loopMode);
+      await interaction.reply(`:white_check_mark: | Set the loop mode`);
+    }
+  }
+  else if (interaction.commandName == "back") {
+    if (!interaction.member.voice.channel)
+      return interaction.channel.send(
+        `:x: | - You're not in a voice channel !`
+      );
+
+    if (
+      interaction.guild.me.voice.channel &&
+      interaction.member.voice.channel.id !==
+      interaction.guild.me.voice.channel.id
+    )
+      return interaction.channel.send(
+        `:x: | - You are not in the same voice channel !`
+      );
+
+    const queue = player.getQueue(interaction.guild.id);
+
+    if (!queue)
+      return interaction.reply(
+        `:x: | - There is no music playing  in this guild !`
+      );
+
+    if (queue) {
+      await queue.back();
+      await interaction.reply(":white_check_mark: | Playing the previous track ")
     }
   }
 });
