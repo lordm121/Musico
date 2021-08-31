@@ -2,6 +2,7 @@
   "dependencies": {
     "@discord-player/extractor": "^3.0.2",
     "@discordjs/opus": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
     "discord-player": "^5.0.2",
     "discord-together": "^1.1.62",
     "discord.js": "^13.1.0",
@@ -15,7 +16,8 @@
   "scripts": {
     "dev": "nodemon main.js",
     "destroy": "kill",
-    "main": "pm2 start main.js"
+    "main": "pm2 start main.js",
+    "register" : "nodemon register-apps.js"
   },
   "keywords": [],
   "author": "Whirl",

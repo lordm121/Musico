@@ -9,5 +9,7 @@
   "guild_join_message" : "",
   "bot_name": "",
   "website_url": "",
-  "github_link": ""
+  "github_link": "",
+  "client_id" : ""
+  
 }

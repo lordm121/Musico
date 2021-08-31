@@ -112,7 +112,7 @@ player.on("queueEnd", (queue) => {
 });
 
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isCommand()) return;
+  
 
   if (interaction.commandName == "play") {
     await interaction.deferReply();
@@ -817,6 +817,57 @@ client.on("interactionCreate", async (interaction) => {
       ephemeral: true,
     });
   }
+  else if (interaction.isContextMenu()) {
+    interaction.deferReply();
+    if (!interaction.member.voice.channel)
+    return interaction.channel.editReply(
+      `${config.error_emoji} | - You're not in a voice channel !`
+    );
+
+  if (
+    interaction.guild.me.voice.channel &&
+    interaction.member.voice.channel.id !==
+      interaction.guild.me.voice.channel.id
+  )
+    return interaction.channel.editReply(
+      `${config.error_emoji} | - You are not in the same voice channel !`
+    );
+
+  const queue = player.getQueue(interaction.guild.id);
+
+  if (!queue || !queue.playing)
+    return interaction.editReply(
+      `${config.error_emoji} | - There is no music playing  in this guild !`
+    );
+
+  if (queue) {
+    let query = interaction.options.getMessage("message")
+    const track = await player
+    .search(query, {
+      requestedBy: interaction.member,
+    })
+    .then((x) => x.tracks[1]);
+  if (!track)
+    return await interaction.editReply({
+      content: `${config.error_emoji} | Track **${query}** not found!`,
+    });
+
+  queue.play(track);
+  const playEmbed = new MessageEmbed()
+    .setColor(`RANDOM`)
+    .setTitle(`🎶 | New Song Added to queue`)
+
+    .setThumbnail(track.thumbnail)
+    .setDescription(`${track.title}`)
+
+    .setFooter(
+      `Requested by ${track.requestedBy.username} | Made By Whirl#0021`
+    );
+
+  await interaction.editReply({ embeds: [playEmbed], ephemeral: true });
+  }
+  }
+  
 });
 client.on("guild_create", (guild) => {
   const channel = guild.channels.cache.find((c) => c.name.includes("general"));
@@ -829,5 +880,6 @@ client.on('messageCreate', async message => {
   if (message.content.includes(`<@876761541481992212>`) || message.content.includes(`<@!876761541481992212>`)) {
     message.reply(`I am slash commands only based! If you don't see them try inviting me again from https://musico.whirl.codes/invite`)
   }
+
 })
 client.login(config.token);
