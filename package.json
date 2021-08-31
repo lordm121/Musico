@@ -3,19 +3,22 @@
     "@discord-player/extractor": "^3.0.2",
     "@discordjs/opus": "^0.6.0",
     "discord-player": "^5.0.2",
+    "discord-together": "^1.1.62",
     "discord.js": "^13.1.0",
     "ffmpeg-static": "^4.4.0",
     "nodemon": "^2.0.12",
-    "quick.db": "^7.1.3"
+    "pm2": "^5.1.1"
   },
-  "name": "musico-rewrite-beta",
+  "name": "musico",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "beta": "nodemon index.js"
+    "dev": "nodemon main.js",
+    "destroy": "kill",
+    "main": "pm2 start main.js"
   },
   "keywords": [],
   "author": "Whirl",
   "license": "MIT",
-  "description": ""
+  "description": "A discord bot made for playing music in voice channels"
 }
