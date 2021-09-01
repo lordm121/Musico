@@ -17,7 +17,7 @@
     "dev": "nodemon main.js",
     "destroy": "kill",
     "main": "pm2 start main.js",
-    "register" : "nodemon register-apps.js"
+    "register" : "nodemon register-apps.js" 
   },
   "keywords": [],
   "author": "Whirl",
