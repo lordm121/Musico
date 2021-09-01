@@ -111,6 +111,7 @@ For support, you can join our discord server by clicking [here](https://discord.
 
 Give a ⭐️ if this project helped you!<br>
 Consider 🥢 this on [GitHub](https://github.com/Whirl21/Musico)<br>
-Consider Buying me a [⛽](https://discord.com/gift) if you like this project!
+Consider Checking Out my [🌐](https://whirl.codes) if you like this project!<br>
+Consider joining my [💬](https://discord.gg/ygGx8KJ65Y) if this project helped you
 
 ---
