@@ -1,15 +1,17 @@
 {
-  "token": "",
-  "error_emoji": "",
-  "confirm_emoji" : "",
-  "github_emoji_id" : "",
-  "website_emoji_id" : "",
-  "invite_emoji_id": "",
-  "invite_url": "",
+  "token": "ODc2NzYxNTQxNDgxOTkyMjEy.YRox0A.q7sqx_GEQ-KMNiNBIPeTVDPm4Xs",
+  "error_emoji": "❌",
+  "confirm_emoji" : "✔",
+  "github_emoji_id" : "744345792172654643",
+  "website_emoji_id" : "734308658917408808",
+  "invite_emoji_id": "864902324219805726",
+  "invite_link": "https://musico.whirl.codes/invite",
   "guild_join_message" : "",
-  "bot_name": "",
-  "website_url": "",
-  "github_link": "",
-  "client_id" : ""
+  "bot_name": "Musico",
+  "website_url": "https://musico.whirl.codes",
+  "github_link": "https://github.com/Whirl21/Musico",
+  "client_id" : "",
+  "support_link" : "https://musico.whirl.codes/support",
+  "support_emoji_id": "864902300467331082"
   
 }

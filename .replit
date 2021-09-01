@@ -1,0 +1,3 @@
+Remove this line when using replace
+language="nodejs"
+run="npm run dev"
