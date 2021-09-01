@@ -1,0 +1,20 @@
+play / the slash sign means done for builders
+stop /
+pause /
+resume /
+loop
+volume
+jump
+seek
+skip /
+lyrics /
+shuffle / 
+clearqueue /
+filter
+nowplaying /
+save /
+back /
+help /
+queue
+activity
+invite/

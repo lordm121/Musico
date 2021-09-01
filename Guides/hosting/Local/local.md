@@ -1,6 +1,6 @@
 
 ## Run Locally
-
+>Do note that you would need to register the slash commands yourself for context menus i have registered them in register-apps.js
 Clone the project
 
 ```bash
