@@ -1,6 +1,6 @@
 FROM node:16.6.0
 
-WORKDIR /bot
+WORKDIR /musico
 
 COPY package*.json ./
 
