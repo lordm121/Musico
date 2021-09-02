@@ -3,24 +3,26 @@ stop > none<br>
 pause > none<br>
 resume > none<br>
 loop > none<br>
-volume > integer {amount}<br>
-jump > integer {tracks}<br>
+volume > integer {volume}<br>
+jump > integer {amount}<br>
 seek > integer {time}<br>
 skip > none<br>
 lyrics > none<br>
 shuffle > none<br>
 clearqueue > none
-filter > string{ must return 8d , mono , bass , karok}(screenshot in screenshots folder)<br>
+filter > string{ must return 8d , mono , bass , karok}(screenshot below)<br>
 nowplaying > none<br>
 save > none<br>
 back > none<br>
 help > none<br>
 queue > none<br>
-activity > channel{channel} > activity {must return yt , poker , fish ,bet , chess}(screenshot in screenshots folder)<br>
+activity > channel{channel} > activity {must return yt , poker , fish ,bet , chess}(screenshot below)<br>
 invite > none<br>
 eval > none<Br>
-![]()
-![]()
+![image](https://user-images.githubusercontent.com/71062861/131803004-2b7fdb87-c47f-4773-bd34-de85fdc80e1d.png)
+
+![image](https://user-images.githubusercontent.com/71062861/131802918-f7773fe3-a06a-4865-99ca-b992869b7720.png)
+
 
 
 
