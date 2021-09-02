@@ -87,6 +87,7 @@ For support, you can join our discord server by clicking [here](https://discord.
 | Improve Lyrics     | ❌     |
 | Website            | ✔      |
 | Builder Commands   | ❌     |
+| Docker   |   ❌  |
 
 ## Configuration
 

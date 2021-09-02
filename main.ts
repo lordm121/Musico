@@ -70,20 +70,18 @@ Trim function
 /**
  * @param  {} str
  * @param  {} max
- * @param  {} =>str.length>max?`${str.slice(0
- * @param  {} max-3
- * @param  {str;} }...`
  * @returns str
  */
 const trim = (str, max) =>
 	str.length > max ? `${str.slice(0, max - 3)}...` : str;
 /** eval function */
-const clean = text => {
-	if (typeof(text) === "string")
-	  return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-	else
-		return text;
-  }
+const clean = (text) => {
+	if (typeof text === "string")
+		return text
+			.replace(/`/g, "`" + String.fromCharCode(8203))
+			.replace(/@/g, "@" + String.fromCharCode(8203));
+	else return text;
+};
 //AS the play even is when the song actually starts playing and not the command we send this embed
 /**
  * @param  {} "trackStart"
@@ -535,7 +533,7 @@ client.on("interactionCreate", async (interaction) => {
 					}
 				)
 
-				.setFooter("© 2021 ${config.bot_name} | Made by Whirl#0021");
+				.setFooter(`© 2021 ${config.bot_name} | Made by Whirl#0021`);
 			interaction.reply({ embeds: [embed] });
 		}
 	} else if (interaction.commandName == "clearqueue") {
@@ -923,23 +921,27 @@ client.on("interactionCreate", async (interaction) => {
 			components: [lol],
 			ephemeral: true,
 		});
-	} else if (interaction.commandName == 'eval') {
-		const string = interaction.options.getString('code');
-		if(interaction.member.id !== '853161018629160990' || '853161018629160990' ) return interaction.reply("This command is devs only ")
+	} else if (interaction.commandName == "eval") {
+		const string = interaction.options.getString("code");
+		if (interaction.member.id !== "853161018629160990" || "853161018629160990")
+			return interaction.reply("This command is devs only ");
 		try {
-		
 			let evaled = eval(string);
-	  
-			if (typeof evaled !== "string")
-			  evaled = require("util").inspect(evaled);
-	  
-			interaction.reply("Successfully evaled your code")
-			await interaction.followUp({content:`${clean(evaled), {code:"xl"}}` ,ephemeral : true})
-		  } catch (err) {
-			interaction.reply({content:`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``, ephemeral: true});
-	}}
-	
-	else if (interaction.isContextMenu()) {
+
+			if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
+
+			interaction.reply("Successfully evaled your code");
+			await interaction.followUp({
+				content: `${(clean(evaled), { code: "xl" })}`,
+				ephemeral: true,
+			});
+		} catch (err) {
+			interaction.reply({
+				content: `\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``,
+				ephemeral: true,
+			});
+		}
+	} else if (interaction.isContextMenu()) {
 		interaction.deferReply();
 		if (!interaction.member.voice.channel)
 			return interaction.channel.editReply(
@@ -989,7 +991,6 @@ client.on("interactionCreate", async (interaction) => {
 			await interaction.editReply({ embeds: [playEmbed], ephemeral: true });
 		}
 	}
-	
 });
 client.on("guild_create", (guild) => {
 	const channel = guild.channels.cache.find((c) => c.name.includes("general"));
