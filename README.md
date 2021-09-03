@@ -22,13 +22,13 @@
 </p>
 
 > A discord bot that i made in 30+ hours to spice up your discord server with music system
-> f
+> 
 
 ### 🏠 [Homepage](https://musico.whirl.codes)
 
 ### ✨ [Demo](https://discord.com/api/oauth2/authorize?client_id=876761541481992212&permissions=2184301889&redirect_uri=https%3A%2F%2Fmusico.whirl.codes&scope=bot%20applications.commands)
 
-### 📗 [Guide](https://github.com/Whirl21/Musico/tree/beta/Guides)
+### 📗 [Guide](https://github.com/Whirl21/Musico/tree/musico/Guides)
 
 ## ✨Features
 
@@ -87,7 +87,7 @@ For support, you can join our discord server by clicking [here](https://discord.
 | Improve Lyrics     | ❌     |
 | Website            | ✔      |
 | Builder Commands   | ❌     |
-| Docker   |   〽  | 
+| Docker   |   ❌  | 
 
 ## Configuration
 
@@ -111,7 +111,7 @@ For support, you can join our discord server by clicking [here](https://discord.
 ## Show your support
 
 Give a ⭐️ if this project helped you!<br>
-Consider 🥢 this on [GitHub](https://github.com/Whirl21/Musico)<br>
+Consider 🥢 this on [GitHub](https://github.com/Whirl21/Musico/fork)<br>
 Consider Checking Out my [🌐](https://whirl.codes) if you like this project!<br>
 Consider joining my [💬](https://discord.gg/ygGx8KJ65Y) if this project helped you
 
