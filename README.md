@@ -22,6 +22,7 @@
 </p>
 
 > A discord bot that i made in 30+ hours to spice up your discord server with music system
+> NOTE : i am no longer going to maintain this shit i wrote and instead work on a full clone of mee6 which has a better version of this music bot
 > 
 
 ### 🏠 [Homepage](https://musico.whirl.codes)
